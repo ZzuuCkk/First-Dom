@@ -1,0 +1,7 @@
+.secondTask{
+    display: block;
+    max-width: 1440px;
+    width: 100%;
+    border-radius: 20px;
+    margin: 20px auto;
+}

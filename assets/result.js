@@ -1,22 +1,3 @@
-// N1
-const btnSelect = document.querySelector(".btn");
-const sectionSelect = document.querySelector("#images-list")
-
-    btnSelect.addEventListener("click",(e) => {
-    btnSelect.remove();
-});
-
-// N2
-
-const imgTagInset = document.createElement("img");
-imgTagInset.setAttribute("src","https://fastly.picsum.photos/id/405/1400/800.jpg?hmac=4CRI7OpfDWtP4EydVd4Z-1NKSGhBmpZq8OaEXVu3be8");
-imgTagInset.setAttribute("alt","street");
-btnSelect.insertAdjacentElement("afterend" , imgTagInset);
-imgTagInset.classList.add("secondTask");
-
-
-// N3 + N4
-
 const results = [
 	{
 		links: {
@@ -209,21 +190,3 @@ const results = [
 		productionPlaces: [],
 	},
 ];
-
-function renderResultJs() {
-    const imagesFromJs = results.map((ress)=> {
-        return `
-            <div class="card">
-                <h3> title is : ${ress.title}</h3>
-            </div>
-
-
-
-        `;
-    });
-
-    console.log(imagesFromJs);
-} 
-
-
-
