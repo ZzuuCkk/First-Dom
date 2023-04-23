@@ -29,7 +29,7 @@ function renderResultJs() {
                 </div>
                 <div class="txt">
                     <h3>${ress.title}</h3>
-                    <p class="longTitle"></p>
+                    <p class="longTitle">${ress.longTitle}</p>
                 </div>
                 <div class="buttons">
                     <button class="green" id="seeMore">see more details</button>
@@ -40,16 +40,24 @@ function renderResultJs() {
         `;
     });
  
-    console.log(imagesFromJs);
     sectionSelect.innerHTML = imagesFromJs.join("");
 
-    myButton.addEventListener("click",(event)=>{
-        const cards=document.querySelector(".card");
-        cards.remove();
-    })
+
+    const removeCardButtons = document.querySelectorAll(".pink");
+    removeCardButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const cardElement = event.target.closest(".card");
+        cardElement.remove(); 
+      });
+    });
 
 
-
+    const addTitle = document.querySelectorAll(".green");
+        addTitle.forEach((button, index) =>{
+            button.addEventListener("click",()=> {
+                window.location.href = results[index].links.web;
+            })
+        })
   }
 
   renderResultJs();
