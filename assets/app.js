@@ -43,8 +43,17 @@ function renderResultJs() {
     console.log(imagesFromJs);
     sectionSelect.innerHTML = imagesFromJs.join("");
 
+    myButton.addEventListener("click",(event)=>{
+        const cards=document.querySelector(".card");
+        cards.remove();
+    })
+
+
+
   }
 
   renderResultJs();
+
+
 
 
